@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SsidWallpaperChanger.Services;
 using SsidWallpaperChanger.Models;
 using SsidWallpaperChanger.ViewModels;
+using SsidWallpaperChanger.Utilities;
 using System.Configuration;
 
 namespace SsidWallpaperChanger.Views
@@ -20,10 +21,12 @@ namespace SsidWallpaperChanger.Views
         private BindingList<WallpaperViewModel> _wallpaperVms;
         private WlanService _wlan;
         private EventService _event;
+        private float _dpiScale;
 
         public MainForm()
         {
             InitializeComponent();
+            _dpiScale = Consts.DpiScale;
             InitializeServices();
             dataGridView1.AutoGenerateColumns = false;
             if (int.TryParse(ConfigurationManager.AppSettings["watchInterval"], out int interval))
@@ -54,6 +57,7 @@ namespace SsidWallpaperChanger.Views
         {
             base.OnLoad(e);
             LoadData();
+            ApplyDpiScale();
         }
 
         private void LoadData()
@@ -72,13 +76,6 @@ namespace SsidWallpaperChanger.Views
             base.OnShown(e);
             this.Hide();
         }
-
-        protected override void OnSizeChanged(EventArgs e)
-        {
-
-            base.OnSizeChanged(e);
-        }
-
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -232,6 +229,23 @@ namespace SsidWallpaperChanger.Views
         private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
             this.timer1.Enabled = !this.Visible;
+        }
+
+        private void ApplyDpiScale()
+        {
+            // This method handles only DataGridView.
+            // Other controls are handled by Form.AutoScaleMode property.
+            foreach(DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.Width = (int)(col.Width * _dpiScale);
+            }
+
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = (int)(row.Height * _dpiScale);
+            }
+
+            dataGridView1.RowTemplate.Height = (int)(dataGridView1.RowTemplate.Height * _dpiScale);
         }
     }
 }
