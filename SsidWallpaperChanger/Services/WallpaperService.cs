@@ -31,9 +31,12 @@ namespace SsidWallpaperChanger.Services
 
 
         private Wallpaper _currentWallpaper = null;
+        private Size _currentResolution = Screen.PrimaryScreen.Bounds.Size;
+
         public void ApplyWallpaper(Wallpaper wallpaper)
         {
-            if (_currentWallpaper != null && _currentWallpaper.Equals(wallpaper))
+            if (_currentWallpaper != null && _currentWallpaper.Equals(wallpaper) &&
+                _currentResolution == Screen.PrimaryScreen.Bounds.Size)
             {
                 return;
             }
