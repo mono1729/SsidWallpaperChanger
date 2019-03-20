@@ -247,5 +247,13 @@ namespace SsidWallpaperChanger.Views
 
             dataGridView1.RowTemplate.Height = (int)(dataGridView1.RowTemplate.Height * _dpiScale);
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(var ad = new AboutDialog())
+            {
+                ad.ShowDialog();
+            }
+        }
     }
 }
