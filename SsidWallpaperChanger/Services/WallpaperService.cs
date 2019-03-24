@@ -44,6 +44,7 @@ namespace SsidWallpaperChanger.Services
             {
                 var originalPic = new Bitmap(wallpaper.ImagePath);
                 var resizedPic = ResizePicture(originalPic, wallpaper.ResizeMode);
+                PurgeTempWallpaperFiles();
                 resizedPic.Save(Consts.TempWallpaperPath);
                 SetWallpaper(Consts.TempWallpaperPath);
             }
@@ -152,6 +153,19 @@ namespace SsidWallpaperChanger.Services
             }
 
             return new Size((int)(imageSize.Width * ratio), (int)(imageSize.Height * ratio));
+        }
+
+        private void PurgeTempWallpaperFiles()
+        {
+            var files = Directory.GetFiles(Path.GetTempPath(), Consts.TempWallpaperPrefix + "*.bmp");
+            foreach(var f in files)
+            {
+                try
+                {
+                    File.Delete(f);
+                }
+                catch (IOException) { }
+            }
         }
     }
 }
