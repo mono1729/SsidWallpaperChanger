@@ -69,12 +69,20 @@ namespace SsidWallpaperChanger.Services
         {
             LoggerService.Instance.WriteLog("RetrieveConnectedSsids begin.");
             var ssids = new List<string>();
-            foreach(var ap in _wifi.GetAccessPoints())
+            try
             {
-                if (ap.IsConnected)
+                foreach (var ap in _wifi.GetAccessPoints())
                 {
-                    ssids.Add(ap.Name);
+                    if (ap.IsConnected)
+                    {
+                        ssids.Add(ap.Name);
+                    }
                 }
+            }
+            catch (System.ComponentModel.Win32Exception ex)
+            {
+                // Throwed when WLAN switched-off.
+                LoggerService.Instance.WriteLog($"Throwed Win32Exception on RetrieveConnectedSsids: {ex.Message}");
             }
             LoggerService.Instance.WriteLog($"RetrieveConnectedSsids end. Data:{string.Join(",",ssids)}");
             return ssids;
