@@ -35,6 +35,11 @@ namespace SsidWallpaperChanger.Services
 
         public void ApplyWallpaper(Wallpaper wallpaper)
         {
+            if (IsForegroundFullScreen())
+            {
+                LoggerService.Instance.WriteLog("Full-scrren app detected.");
+                return;
+            }
             if (_currentWallpaper != null && _currentWallpaper.Equals(wallpaper) &&
                 _currentResolution == Screen.PrimaryScreen.Bounds.Size)
             {
@@ -44,13 +49,13 @@ namespace SsidWallpaperChanger.Services
             {
                 var originalPic = new Bitmap(wallpaper.ImagePath);
                 var resizedPic = ResizePicture(originalPic, wallpaper.ResizeMode);
-                PurgeTempWallpaperFiles();
                 resizedPic.Save(Consts.TempWallpaperPath);
                 SetWallpaper(Consts.TempWallpaperPath);
             }
             else
             {
-                SetWallpaper(string.Empty);
+                File.Create(Consts.TempWallpaperPath).Close();
+                SetWallpaper(Consts.TempWallpaperPath);
             }
             SetWallcolor(wallpaper.WallColor);
             // Wallpaper is MUTABLE!!
@@ -154,18 +159,38 @@ namespace SsidWallpaperChanger.Services
 
             return new Size((int)(imageSize.Width * ratio), (int)(imageSize.Height * ratio));
         }
-
-        private void PurgeTempWallpaperFiles()
+        
+        // code from
+        // https://stackoverflow.com/questions/3536373/detect-if-user-has-any-application-running-in-fullscreen
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RECT
         {
-            var files = Directory.GetFiles(Path.GetTempPath(), Consts.TempWallpaperPrefix + "*.bmp");
-            foreach(var f in files)
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+        }
+
+        [DllImport("user32.dll")]
+        private static extern bool GetWindowRect(HandleRef hWnd, [In, Out] ref RECT rect);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+
+        public static bool IsForegroundFullScreen()
+        {
+            return IsForegroundFullScreen(null);
+        }
+
+        public static bool IsForegroundFullScreen(Screen screen)
+        {
+            if (screen == null)
             {
-                try
-                {
-                    File.Delete(f);
-                }
-                catch (IOException) { }
+                screen = Screen.PrimaryScreen;
             }
+            RECT rect = new RECT();
+            GetWindowRect(new HandleRef(null, GetForegroundWindow()), ref rect);
+            return new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top).Contains(screen.Bounds);
         }
     }
 }
