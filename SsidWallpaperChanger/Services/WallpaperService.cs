@@ -135,7 +135,7 @@ namespace SsidWallpaperChanger.Services
                 return imageSize;
             }
 
-            var screenSize = Screen.PrimaryScreen.Bounds.Size;
+            var screenSize = _currentResolution;
 
             var screenAspectRatio = (double)screenSize.Width / screenSize.Height;
             var imageAspectRatio = (double)imageSize.Width / imageSize.Height;
