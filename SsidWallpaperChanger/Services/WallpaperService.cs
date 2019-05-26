@@ -45,6 +45,7 @@ namespace SsidWallpaperChanger.Services
             {
                 return;
             }
+            _currentResolution = Screen.PrimaryScreen.Bounds.Size;
             if (!string.IsNullOrEmpty(wallpaper.ImagePath))
             {
                 var originalPic = new Bitmap(wallpaper.ImagePath);
@@ -191,6 +192,21 @@ namespace SsidWallpaperChanger.Services
             RECT rect = new RECT();
             GetWindowRect(new HandleRef(null, GetForegroundWindow()), ref rect);
             return new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top).Contains(screen.Bounds);
+        }
+
+        public void PurgeWindowsWallpaperCache()
+        {
+            var appData = Environment.GetEnvironmentVariable("APPDATA");
+            var themes = Path.Combine(appData, @"Microsoft\Windows\Themes");
+            try
+            {
+                File.Delete(Path.Combine(themes, "TranscodedWallpaper"));
+                foreach (var f in Directory.GetFiles(Path.Combine(themes, @"CachedFiles\")))
+                {
+                    File.Delete(f);
+                }
+            }
+            catch (IOException) { }
         }
     }
 }

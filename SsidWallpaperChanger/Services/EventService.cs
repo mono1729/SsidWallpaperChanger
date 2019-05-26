@@ -48,12 +48,14 @@ namespace SsidWallpaperChanger.Services
         private void Event_ApplicationExit(object sender, EventArgs e)
         {
             _watchEnable = false;
+            WallpaperService.Instance.PurgeWindowsWallpaperCache();
             ApplyDefaultWallpaper();
         }
 
         private void Event_SessionEnding(object sender, SessionEndingEventArgs e)
         {
             _watchEnable = false;
+            WallpaperService.Instance.PurgeWindowsWallpaperCache();
             ApplyDefaultWallpaper();
         }
 
