@@ -776,6 +776,21 @@
         Rx111FFHHXXUUUcdddRRRx111FFHHXXUUUcdddRRRx3ViP8PjAPa4mvkpjQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="IsConnected.HeaderText" xml:space="preserve">
+    <value>接続中</value>
+  </data>
+  <data name="ImagePath.HeaderText" xml:space="preserve">
+    <value>画像パス</value>
+  </data>
+  <data name="ResizeMode.HeaderText" xml:space="preserve">
+    <value>リサイズモード</value>
+  </data>
+  <data name="WallColor.HeaderText" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="Thumbnail.HeaderText" xml:space="preserve">
+    <value>サムネイル</value>
+  </data>
   <data name="button3.Text" xml:space="preserve">
     <value>アクセスポイント追加</value>
   </data>

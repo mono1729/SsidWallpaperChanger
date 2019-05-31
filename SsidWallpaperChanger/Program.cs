@@ -18,6 +18,7 @@ namespace SsidWallpaperChanger
             var mutexName = Application.ProductName;
             var mutex = new Mutex(false, mutexName);
             bool allocated = false;
+            // Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             try
             {

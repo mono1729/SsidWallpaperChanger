@@ -12,6 +12,7 @@ using SsidWallpaperChanger.Models;
 using SsidWallpaperChanger.ViewModels;
 using SsidWallpaperChanger.Utilities;
 using System.Configuration;
+using System.Threading;
 
 namespace SsidWallpaperChanger.Views
 {
@@ -58,6 +59,7 @@ namespace SsidWallpaperChanger.Views
             base.OnLoad(e);
             LoadData();
             ApplyDpiScale();
+            ApplyCultureOnDataGrid();
         }
 
         private void LoadData()
@@ -256,6 +258,27 @@ namespace SsidWallpaperChanger.Views
             using(var ad = new AboutDialog())
             {
                 ad.ShowDialog();
+            }
+        }
+
+        private void ApplyCultureOnDataGrid()
+        {
+            // Buttons or ComboBoxes on Cells are incompatible with i18n.
+            if (Thread.CurrentThread.CurrentUICulture.ToString() == "ja-JP")
+            {
+                // ResizeMode ComboBox
+                var dict = new Dictionary<string,string>();
+                dict.Add("Original", "オリジナル");
+                dict.Add("Zoom", "拡大");
+                dict.Add("BorderlessZoom", "フチなし拡大");
+                var resizeModeCol = (DataGridViewComboBoxColumn)dataGridView1.Columns["ResizeMode"];
+                resizeModeCol.ValueMember = "Key";
+                resizeModeCol.DisplayMember = "Value";
+                resizeModeCol.DataSource = new BindingSource(dict, null);
+
+                // Remove Button
+                var removeCol = (DataGridViewButtonColumn)dataGridView1.Columns["RemoveRow"];
+                removeCol.Text = "削除";
             }
         }
     }
