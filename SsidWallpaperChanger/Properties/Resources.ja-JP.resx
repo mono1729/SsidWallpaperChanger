@@ -118,24 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About {0}</value>
+    <value>{0} のバージョン情報</value>
   </data>
   <data name="Already registered." xml:space="preserve">
-    <value>Already registered.</value>
+    <value>すでに登録済です。</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>確認</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>エラー</value>
   </data>
   <data name="Proceed to remove this entry?" xml:space="preserve">
-    <value>Proceed to remove this entry?</value>
+    <value>このアクセスポイントを削除しますか？</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Version {0}</value>
+    <value>バージョン {0}</value>
   </data>
   <data name="[CONNECTED]" xml:space="preserve">
-    <value>[CONNECTED]</value>
+    <value>[接続中]</value>
   </data>
 </root>

@@ -91,7 +91,7 @@ namespace SsidWallpaperChanger.Views
             {
                 if (_wpCollection.ContainsSsid(ssid))
                 {
-                    MessageBox.Show("Already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show(Properties.Resources.Already_registered_, Properties.Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
 
@@ -149,7 +149,10 @@ namespace SsidWallpaperChanger.Views
             }
             if (e.ColumnIndex == removeRowIdx)
             {
-                if (DialogResult.No == (MessageBox.Show(text: "Proceed to remove this entry?",caption: "Confirmation",
+                if (DialogResult.No == 
+                    (MessageBox.Show(
+                        text: Properties.Resources.Proceed_to_remove_this_entry_,
+                        caption: Properties.Resources.Confirmation,
                     buttons: MessageBoxButtons.YesNo, icon: MessageBoxIcon.Question)))
                 {
                     return;

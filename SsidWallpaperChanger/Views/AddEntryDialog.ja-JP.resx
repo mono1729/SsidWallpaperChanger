@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About {0}</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>キャンセル</value>
   </data>
-  <data name="Already registered." xml:space="preserve">
-    <value>Already registered.</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="Proceed to remove this entry?" xml:space="preserve">
-    <value>Proceed to remove this entry?</value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>Version {0}</value>
-  </data>
-  <data name="[CONNECTED]" xml:space="preserve">
-    <value>[CONNECTED]</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>接続済アクセスポイント</value>
   </data>
 </root>
