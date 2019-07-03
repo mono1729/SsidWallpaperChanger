@@ -16,5 +16,6 @@ namespace SsidWallpaperChanger.Utilities
         public static readonly float DpiScale = ((new System.Windows.Forms.Form()).CreateGraphics().DpiX) / 96;
         public static readonly Size ThumbnailSize = new Size((int)(80 * DpiScale), (int)(45 * DpiScale));
         public static string TempWallpaperPath = Path.Combine(Path.GetTempPath(), $"SwpcWallpaper.bmp");
+        public static string TempRegFilePath = Path.Combine(Path.GetTempPath(), $"temp.reg");
     }
 }

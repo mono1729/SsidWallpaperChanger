@@ -118,27 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="preferencesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="preferencesToolStripMenuItem.Text" xml:space="preserve">
-    <value>設定(&amp;P)</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>バージョン情報(&amp;A)</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>終了(&amp;X)</value>
-  </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 76</value>
   </data>
@@ -776,6 +755,27 @@
         Rx111FFHHXXUUUcdddRRRx111FFHHXXUUUcdddRRRx3ViP8PjAPa4mvkpjQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="preferencesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="preferencesToolStripMenuItem.Text" xml:space="preserve">
+    <value>設定(&amp;P)</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>バージョン情報(&amp;A)</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>終了(&amp;X)</value>
+  </data>
   <data name="IsConnected.HeaderText" xml:space="preserve">
     <value>接続中</value>
   </data>
@@ -792,10 +792,13 @@
     <value>サムネイル</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>アクセスポイント追加</value>
+    <value>アクセスポイント追加(&amp;E)...</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>キャンセル</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>詳細設定(&amp;A)...</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

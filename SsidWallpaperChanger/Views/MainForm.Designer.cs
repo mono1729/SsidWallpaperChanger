@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,14 +38,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.IsConnected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Ssid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImagePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +46,15 @@
             this.WallColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thumbnail = new System.Windows.Forms.DataGridViewImageColumn();
             this.RemoveRow = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -119,52 +120,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // tableLayoutPanel2
-            // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // openFileDialog1
-            // 
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // IsConnected
             // 
             this.IsConnected.DataPropertyName = "IsConnected";
@@ -206,8 +161,8 @@
             // WallColor
             // 
             this.WallColor.DataPropertyName = "WallColor";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.WallColor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.WallColor.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.WallColor, "WallColor");
             this.WallColor.Name = "WallColor";
             this.WallColor.ReadOnly = true;
@@ -227,6 +182,60 @@
             this.RemoveRow.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.RemoveRow.Text = "Remove";
             this.RemoveRow.UseColumnTextForButtonValue = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button4, 3, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // openFileDialog1
+            // 
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
@@ -271,6 +280,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WallColor;
         private System.Windows.Forms.DataGridViewImageColumn Thumbnail;
         private System.Windows.Forms.DataGridViewButtonColumn RemoveRow;
+        private System.Windows.Forms.Button button4;
     }
 }
 

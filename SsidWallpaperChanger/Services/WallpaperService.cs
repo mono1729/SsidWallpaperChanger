@@ -37,7 +37,7 @@ namespace SsidWallpaperChanger.Services
         {
             if (IsForegroundFullScreen())
             {
-                LoggerService.Instance.WriteLog("Full-scrren app detected.");
+                LoggerService.Instance.WriteLog("Full-screen app detected.");
                 return;
             }
             if (_currentWallpaper != null && _currentWallpaper.Equals(wallpaper) &&

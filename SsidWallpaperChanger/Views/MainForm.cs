@@ -281,5 +281,13 @@ namespace SsidWallpaperChanger.Views
                 removeCol.Text = "削除";
             }
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var d = new AdvancedSettingsDialog())
+            {
+                d.ShowDialog();
+            }
+        }
     }
 }
