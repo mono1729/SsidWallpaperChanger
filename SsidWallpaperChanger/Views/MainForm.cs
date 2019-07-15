@@ -50,8 +50,13 @@ namespace SsidWallpaperChanger.Views
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            button2.PerformClick();
+            // Do not forget CloseReason confirmation.
+            // If you don't, it will cause a malfunction on the time of shutdown.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                button2.PerformClick();
+            }
         }
 
         protected override void OnLoad(EventArgs e)
