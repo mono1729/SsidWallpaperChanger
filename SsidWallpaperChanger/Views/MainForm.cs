@@ -23,6 +23,7 @@ namespace SsidWallpaperChanger.Views
         private WlanService _wlan;
         private EventService _event;
         private float _dpiScale;
+        private bool _resetWallpaperOnExit;
 
         public MainForm()
         {
@@ -46,6 +47,8 @@ namespace SsidWallpaperChanger.Views
             _wpCollection = WallpaperCollection.ReadXml();
             _event = new EventService(_wpCollection);
             _event.RegisterEvent();
+
+            _resetWallpaperOnExit = ConfigurationManager.AppSettings["resetWallpaperOnExit"].Equals(bool.TrueString);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -222,7 +225,7 @@ namespace SsidWallpaperChanger.Views
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.ExitThread();
+            Application.Exit();
         }
 
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
@@ -292,6 +295,14 @@ namespace SsidWallpaperChanger.Views
             using (var d = new AdvancedSettingsDialog())
             {
                 d.ShowDialog();
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (_resetWallpaperOnExit)
+            {
+                _event.ApplyDefaultWallpaper();
             }
         }
     }

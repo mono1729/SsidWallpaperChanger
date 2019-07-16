@@ -22,11 +22,6 @@ namespace SsidWallpaperChanger.Services
         public void RegisterEvent()
         {
             SystemEvents.PowerModeChanged += Event_PowerModeChanged;
-            if (ConfigurationManager.AppSettings["resetWallpaperOnExit"].Equals(bool.TrueString))
-            {
-                System.Windows.Forms.Application.ApplicationExit += Event_ApplicationExit;
-                SystemEvents.SessionEnding += Event_SessionEnding;
-            }
         }
 
         public void Event_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
@@ -45,19 +40,6 @@ namespace SsidWallpaperChanger.Services
             }
         }
 
-        private void Event_ApplicationExit(object sender, EventArgs e)
-        {
-            _watchEnable = false;
-            WallpaperService.Instance.PurgeWindowsWallpaperCache();
-            ApplyDefaultWallpaper();
-        }
-
-        private void Event_SessionEnding(object sender, SessionEndingEventArgs e)
-        {
-            _watchEnable = false;
-            WallpaperService.Instance.PurgeWindowsWallpaperCache();
-            ApplyDefaultWallpaper();
-        }
 
         public void ApplyDefaultWallpaper()
         {
@@ -118,7 +100,6 @@ namespace SsidWallpaperChanger.Services
         {
             // DO NOT FORGET?
             SystemEvents.PowerModeChanged -= Event_PowerModeChanged;
-            SystemEvents.SessionEnding -= Event_SessionEnding;
         }
     }
 
