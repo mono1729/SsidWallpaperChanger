@@ -276,6 +276,8 @@ namespace SsidWallpaperChanger.Views
             {
                 // ResizeMode ComboBox
                 var dict = new Dictionary<string,string>();
+
+                // TODO: Move localized messages to resource file.
                 dict.Add("Original", "オリジナル");
                 dict.Add("Zoom", "拡大");
                 dict.Add("BorderlessZoom", "フチなし拡大");

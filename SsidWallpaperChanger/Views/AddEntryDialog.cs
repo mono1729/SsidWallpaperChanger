@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SsidWallpaperChanger.Services;
 using SsidWallpaperChanger.Models;
 using SsidWallpaperChanger.Utilities;
+using System.Threading;
 
 namespace SsidWallpaperChanger.Views
 {
@@ -31,7 +32,7 @@ namespace SsidWallpaperChanger.Views
             // add default entry.
             _ssids = new List<string>();
             _ssids.Add(Consts.DefaultSsid);
-            _ssids.AddRange(WlanService.Instance.Ssids);
+            _ssids.AddRange(WlanService.Instance.Ssids.OrderBy(x => x));
             _connectedSsids = new List<string>(WlanService.Instance.ConnectedSsids);
             listBox1.DataSource = _ssids;
         }
@@ -40,7 +41,14 @@ namespace SsidWallpaperChanger.Views
         {
             if (_connectedSsids.Contains((string)e.Value))
             {
-                e.Value = (string)e.Value + " [CONNECTED]";
+                if (Thread.CurrentThread.CurrentUICulture.ToString() != "ja-JP")
+                {
+                    e.Value = (string)e.Value + " [CONNECTED]";
+                }
+                else
+                {
+                    e.Value = (string)e.Value + " [接続中]";
+                }
             }
         }
 
