@@ -48,11 +48,19 @@ namespace SsidWallpaperChanger.Views
 
         private bool GetStatusOfAllowBlockingAppsAtShutdown()
         {
-            var value = (int)Registry.GetValue(
-                @"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System",
-                "AllowBlockingAppsAtShutdown",
-                0
-            );
+            int value;
+            try
+            {
+                value = (int)Registry.GetValue(
+                    @"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System",
+                    "AllowBlockingAppsAtShutdown",
+                    0
+                );
+            }
+            catch (Exception)
+            {
+                return false;
+            }
             return value == 1;
         }
 
