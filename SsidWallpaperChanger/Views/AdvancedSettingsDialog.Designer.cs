@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.resetWallpaperCheckBox = new System.Windows.Forms.CheckBox();
+            this.autoStartCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -54,11 +55,18 @@
             this.resetWallpaperCheckBox.Name = "resetWallpaperCheckBox";
             this.resetWallpaperCheckBox.UseVisualStyleBackColor = true;
             // 
+            // autoStartCheckBox
+            // 
+            resources.ApplyResources(this.autoStartCheckBox, "autoStartCheckBox");
+            this.autoStartCheckBox.Name = "autoStartCheckBox";
+            this.autoStartCheckBox.UseVisualStyleBackColor = true;
+            // 
             // AdvancedSettingsDialog
             // 
             this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.autoStartCheckBox);
             this.Controls.Add(this.resetWallpaperCheckBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -75,5 +83,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox resetWallpaperCheckBox;
+        private System.Windows.Forms.CheckBox autoStartCheckBox;
     }
 }

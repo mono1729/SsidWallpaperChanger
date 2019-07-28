@@ -122,10 +122,10 @@
     <value>3</value>
   </data>
   <data name="&gt;&gt;resetWallpaperCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -146,17 +146,20 @@
   <data name="&gt;&gt;button2.Name" xml:space="preserve">
     <value>button2</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AdvancedSettingsDialog</value>
-  </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;autoStartCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="resetWallpaperCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="resetWallpaperCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="autoStartCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 19</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>565, 190</value>
@@ -171,8 +174,17 @@
   <data name="&gt;&gt;resetWallpaperCheckBox.Name" xml:space="preserve">
     <value>resetWallpaperCheckBox</value>
   </data>
+  <data name="autoStartCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 37</value>
+  </data>
+  <data name="autoStartCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="resetWallpaperCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AdvancedSettingsDialog</value>
   </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -181,13 +193,25 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;autoStartCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;autoStartCheckBox.Name" xml:space="preserve">
+    <value>autoStartCheckBox</value>
+  </data>
+  <data name="&gt;&gt;autoStartCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;resetWallpaperCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="resetWallpaperCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>353, 19</value>
+  </data>
+  <data name="autoStartCheckBox.Text" xml:space="preserve">
+    <value>&amp;Auto-start on system startup.</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -197,6 +221,9 @@
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>&amp;OK</value>
+  </data>
+  <data name="autoStartCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 155</value>
@@ -213,10 +240,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>&amp;Cancel</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="resetWallpaperCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja-JP</value>
   </metadata>
 </root>

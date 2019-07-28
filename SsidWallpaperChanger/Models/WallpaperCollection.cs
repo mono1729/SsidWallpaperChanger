@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,13 @@ namespace SsidWallpaperChanger.Models
 
         public static WallpaperCollection ReadXml()
         {
-            var xmlName = ConfigurationManager.AppSettings["wallpapersXml"];
-            if (!System.IO.File.Exists(xmlName))
+            var xmlPath = Utilities.Consts.WallpapersXmlPath;
+            if (!System.IO.File.Exists(xmlPath))
             {
                 return GetInitialCollection();
             }
 
-            using (var f = new System.IO.StreamReader(xmlName))
+            using (var f = new System.IO.StreamReader(xmlPath))
             {
                 var xmlser = new XmlSerializer(typeof(WallpaperCollection));
                 return (WallpaperCollection)xmlser.Deserialize(f);
@@ -31,8 +32,8 @@ namespace SsidWallpaperChanger.Models
 
         public void WriteXml()
         {
-            var xmlName = ConfigurationManager.AppSettings["wallpapersXml"];
-            using (var f = new System.IO.StreamWriter(xmlName))
+            var xmlPath = Utilities.Consts.WallpapersXmlPath;
+            using (var f = new System.IO.StreamWriter(xmlPath))
             {
                 var xmlser = new XmlSerializer(typeof(WallpaperCollection));
                 xmlser.Serialize(f, this);

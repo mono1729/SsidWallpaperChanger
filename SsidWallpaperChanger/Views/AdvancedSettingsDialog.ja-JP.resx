@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 145</value>
+  </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 23</value>
+    <value>86, 28</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>OK(&amp;O)</value>
   </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 145</value>
+  </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 23</value>
+    <value>85, 28</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>キャンセル(&amp;C)</value>
@@ -135,6 +141,12 @@
   </data>
   <data name="resetWallpaperCheckBox.Text" xml:space="preserve">
     <value>終了時に壁紙をリセットする(&amp;R)</value>
+  </data>
+  <data name="autoStartCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 19</value>
+  </data>
+  <data name="autoStartCheckBox.Text" xml:space="preserve">
+    <value>システム起動時に自動起動する(&amp;A)</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>詳細設定</value>
