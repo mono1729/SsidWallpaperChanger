@@ -23,7 +23,8 @@ namespace SsidWallpaperChanger.Views
         private WlanService _wlan;
         private EventService _event;
         private float _dpiScale;
-        private bool _resetWallpaperOnExit;
+        private bool _resetWallpaperOnExit => 
+            ConfigurationManager.AppSettings["resetWallpaperOnExit"].Equals(bool.TrueString);
 
         public MainForm()
         {
@@ -47,8 +48,6 @@ namespace SsidWallpaperChanger.Views
             _wpCollection = WallpaperCollection.ReadXml();
             _event = new EventService(_wpCollection);
             _event.RegisterEvent();
-
-            _resetWallpaperOnExit = ConfigurationManager.AppSettings["resetWallpaperOnExit"].Equals(bool.TrueString);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

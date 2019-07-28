@@ -117,17 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>シャットダウンをブロックするか取り消すアプリケーションの自動終了をオフにする(&amp;D)</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 23</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>OK(&amp;O)</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Windowsはデフォルトでシャットダウン時のスクリプト実行を妨害します。
-これが原因で、シャットダウン時の壁紙除去機能が動作しないことがあります。
-シャットダウン時に厳密に壁紙除去をしたい場合には、この機能を有効にしてください。
-設定変更には管理者権限が必要です。</value>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 23</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>キャンセル(&amp;C)</value>
+  </data>
+  <data name="resetWallpaperCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 19</value>
+  </data>
+  <data name="resetWallpaperCheckBox.Text" xml:space="preserve">
+    <value>終了時に壁紙をリセットする(&amp;R)</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>詳細設定</value>
