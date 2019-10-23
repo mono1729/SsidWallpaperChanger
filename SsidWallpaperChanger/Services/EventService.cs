@@ -29,9 +29,11 @@ namespace SsidWallpaperChanger.Services
             switch (e.Mode)
             {
                 case PowerModes.Resume:
-                    LoggerService.Instance.WriteLog("Resume detected.");
-                    _watchEnable = true;
-                    break;
+                    // Resume event could be delayed until any user operation.
+                    // I decided not to use this event to detect the computer resume.
+                    // LoggerService.Instance.WriteLog("Resume detected.");
+                    // _watchEnable = true;
+                    // break;
                 case PowerModes.Suspend:
                     LoggerService.Instance.WriteLog("Suspend detected.");
                     _watchEnable = false;
