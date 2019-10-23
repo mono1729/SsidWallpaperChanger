@@ -205,6 +205,8 @@ namespace SsidWallpaperChanger.Views
         private void button1_Click(object sender, EventArgs e)
         {
             _wpCollection.WriteXml();
+            // Apply wallpaper immediately.
+            _event?.WatchWlanNetworkChanging();
             this.Hide();
         }
 
