@@ -36,7 +36,7 @@ namespace SsidWallpaperChanger.Services
                     // break;
                 case PowerModes.Suspend:
                     LoggerService.Instance.WriteLog("Suspend detected.");
-                    _watchEnable = false;
+                    // _watchEnable = false;
                     ApplyDefaultWallpaper();
                     break;
             }
